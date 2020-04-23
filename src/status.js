@@ -31,7 +31,7 @@ function initData(vm){
 
     let data = vm.$options.data
     data = vm._data = typeof data === "function" ? data.call(vm) : data;
-    observe(data) //响应式原理
+    observe(data) //数据监测
 } 
 function initComputed(vm){
 
