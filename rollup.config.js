@@ -1,6 +1,6 @@
 import babel from  'rollup-plugin-babel'
 import serve from  'rollup-plugin-serve'
-
+import livereload from 'rollup-plugin-livereload';
 export default {
     input:'./src/index.js',
     output:{
@@ -16,11 +16,10 @@ export default {
         process.env.ENV === 'development' ? serve({
             open:true,
             openPage:'/public/index.html',
+            host:'localhost',
             port:3000,
             contentBase:''
-        }) : null
+        }) : null,
+        livereload()
     ]
-    
 }
-
-console.log(process.env.ENV)
